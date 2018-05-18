@@ -8,35 +8,35 @@ import api.users.User;
 
 @Entity
 public class Post {
-	private String name;
-	private String pass;
+	private String title;
+	private String text;
 	@Id
 	private String id;
 	@ManyToOne
 	private User user;
 	
 	
-	public Post(String name, String pass, String id, String userId) {
+	public Post(String title, String text, String id, String userId) {
 		super();
-		this.name = name;
-		this.pass = pass;
+		this.title = title;
+		this.text = text;
 		this.id = id;
 		this.user = new User("", "", userId);
 	}
 	public Post() {
 		
 	}
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public String getPass() {
-		return pass;
+	public String getText() {
+		return text;
 	}
-	public void setPass(String pass) {
-		this.pass = pass;
+	public void setPass(String text) {
+		this.text = text;
 	}
 	public String getId() {
 		return id;
@@ -50,5 +50,4 @@ public class Post {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
 }
