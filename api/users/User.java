@@ -1,36 +1,40 @@
-package api.posts;
+package api.users;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-@Service
-public class PostService {
-
-	@Autowired
-	private PostRepository postRepository;
+@Entity
+public class User {
+	private String name;
+	private String pass;
+	@Id
+	private String id;
 	
-	public List<Post> getAllPosts(String id) {
-		List<Post> posts = new ArrayList<>();
-		postRepository.findByUserId(id).forEach(posts::add);
-		return posts;
+	public User(String name, String pass, String id) {
+		super();
+		this.name = name;
+		this.pass = pass;
+		this.id = id;
 	}
-	
-	public Post getPost(String id) {
-		return postRepository.findById(id).get();
+	public User() {
+		
 	}
-
-	public void addPost(Post post) {
-		postRepository.save(post);
+	public String getName() {
+		return name;
 	}
-
-	public void updatePost(Post post) {
-		postRepository.save(post);
+	public void setName(String name) {
+		this.name = name;
 	}
-
-	public void deletePost(String id) {
-		postRepository.deleteById(id);
+	public String getPass() {
+		return pass;
 	}
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}	
 }
