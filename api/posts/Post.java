@@ -35,7 +35,7 @@ public class Post {
 	public String getText() {
 		return text;
 	}
-	public void setPass(String text) {
+	public void setText(String text) {
 		this.text = text;
 	}
 	public String getId() {
