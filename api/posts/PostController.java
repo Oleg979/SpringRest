@@ -15,7 +15,6 @@ import api.users.User;
 
 @RestController
 public class PostController {
-	
 	@Autowired
 	private PostService postService;
 	
@@ -44,7 +43,5 @@ public class PostController {
 	@DeleteMapping("/users/{userId}/posts/{id}")
 	public void deletePost(@PathVariable String id) {
 		postService.deletePost(id);
-	}
-	
-	
+	}	
 }
